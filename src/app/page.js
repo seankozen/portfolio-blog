@@ -1,6 +1,15 @@
 import ProjectSection from "./components/ProjectSection";
+import { client } from "../sanity/lib/client";
+import TestPage from "./components/Test";
 
-export default function Home() {
+const query = `*[_type == "project"]{
+  _id, name, githubUrl, image, projectUrl, description, fullDescription, tags, techStack
+}`;
+
+const projects = await client.fetch(query);
+
+export default async function Home() {
+  console.log(projects);
   return (
     <div className="container mx-auto p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div className="relative">
@@ -25,7 +34,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <ProjectSection />
+      <ProjectSection projects={projects} />
     </div>
   );
 }
