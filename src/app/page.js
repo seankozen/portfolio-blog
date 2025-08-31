@@ -3,7 +3,7 @@ import { client } from "../sanity/lib/client";
 import TestPage from "./components/Test";
 
 const query = `*[_type == "project"]{
-  _id, name, githubUrl, image, projectUrl, description, fullDescription, tags, techStack
+  _id, name, githubUrl, image, projectUrl, description, fullDescription, tags[]{svgPath}, techStack
 }`;
 
 const projects = await client.fetch(query);

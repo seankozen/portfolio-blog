@@ -17,7 +17,7 @@ export default {
     },
     {
       name: "image",
-      title: "Imgae",
+      title: "Image",
       type: "image",
     },
     {
@@ -39,7 +39,23 @@ export default {
       name: "tags",
       title: "Technologies",
       type: "array",
-      of: [{ type: "string" }],
+      of: [
+        {
+          type: "object",
+          name: "svgIcon",
+          title: "SVG Icon",
+          fields: [
+            { name: "name", title: "Icon Name", type: "string" },
+            {
+              name: "svgPath",
+              title: "SVG Path",
+              type: "string",
+              description:
+                "Path to the SVG file in /icons (e.g. /icons/react.svg)",
+            },
+          ],
+        },
+      ],
     },
     {
       name: "techStack",

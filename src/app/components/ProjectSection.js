@@ -2,74 +2,6 @@
 import React, { useState } from "react";
 import ProjectModal from "./ProjectModal";
 
-// const projects = [
-//   {
-//     id: 1,
-//     title: "AI Quiz Generator",
-//     tags: ["TS", "Next.js", "DrizzleORM"],
-//     description:
-//       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
-//     fullDescription:
-//       "Pellentesque malesuada elit convallis, vulputate purus at, suscipit eros. Proin ut felis quis nibh mollis maximus. Vivamus sed urna eget lectus dignissim euismod vel sit amet purus. ",
-//     image: "/images/oncorhynchus_mykiss-1440x930.jpeg",
-//     techStack: ["TS", "Next.js", "DrizzleORM"],
-//   },
-//   {
-//     id: 2,
-//     title: "Real Estate Website",
-//     tags: ["React", "Tailwind CSS", "Firebase"],
-//     description:
-//       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
-//     fullDescription:
-//       "Pellentesque malesuada elit convallis, vulputate purus at, suscipit eros. Proin ut felis quis nibh mollis maximus. Vivamus sed urna eget lectus dignissim euismod vel sit amet purus. ",
-//     image: "/images/oncorhynchus_mykiss-1440x930.jpeg",
-//     techStack: ["TS", "Next.js", "DrizzleORM"],
-//   },
-//   {
-//     id: 3,
-//     title: "Form Builder Tool",
-//     tags: ["Next.js", "React", "TailwindCSS", "Prisma"],
-//     description:
-//       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
-//     fullDescription:
-//       "Pellentesque malesuada elit convallis, vulputate purus at, suscipit eros. Proin ut felis quis nibh mollis maximus. Vivamus sed urna eget lectus dignissim euismod vel sit amet purus. ",
-//     image: "/images/oncorhynchus_mykiss-1440x930.jpeg",
-//     techStack: ["TS", "Next.js", "DrizzleORM"],
-//   },
-//   {
-//     id: 4,
-//     title: "Blog Website",
-//     tags: ["MDX", "TailwindCSS", "Next.js", "Framer Motion"],
-//     description:
-//       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
-//     fullDescription:
-//       "Pellentesque malesuada elit convallis, vulputate purus at, suscipit eros. Proin ut felis quis nibh mollis maximus. Vivamus sed urna eget lectus dignissim euismod vel sit amet purus. ",
-//     image: "/images/oncorhynchus_mykiss-1440x930.jpeg",
-//     techStack: ["TS", "Next.js", "DrizzleORM"],
-//   },
-//   {
-//     id: 5,
-//     title: "E-commerce",
-//     tags: ["MDX", "TailwindCSS", "Next.js", "Framer Motion"],
-//     description:
-//       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
-//     fullDescription:
-//       "Pellentesque malesuada elit convallis, vulputate purus at, suscipit eros. Proin ut felis quis nibh mollis maximus. Vivamus sed urna eget lectus dignissim euismod vel sit amet purus. ",
-//     image: "/images/oncorhynchus_mykiss-1440x930.jpeg",
-//     techStack: ["TS", "Next.js", "DrizzleORM"],
-//   },
-//   {
-//     id: 5,
-//     title: "Tax App",
-//     tags: ["MDX", "TailwindCSS", "Next.js", "Framer Motion"],
-//     description:
-//       "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
-//     fullDescription:
-//       "Pellentesque malesuada elit convallis, vulputate purus at, suscipit eros. Proin ut felis quis nibh mollis maximus. Vivamus sed urna eget lectus dignissim euismod vel sit amet purus. ",
-//     image: "/images/oncorhynchus_mykiss-1440x930.jpeg",
-//     techStack: ["TS", "Next.js", "DrizzleORM"],
-//   },
-// ];
 function ProjectSection({ projects }) {
   const [selectedProject, setSelectedProject] = useState(null);
 
@@ -124,15 +56,28 @@ function ProjectSection({ projects }) {
               <h3 className="text-lg font-semibold text-white mb-2">
                 {project.name}
               </h3>
-              <div className="flex flex-wrap gap-1 mt-auto">
-                {project.tags.map((tag, index) => (
+              <div className="flex flex-wrap gap-10 mt-auto items-center">
+                {project.tags?.map((tag, idx) => {
+                  if (!tag || !tag.svgPath) return null; // skip null/empty
+                  return (
+                    <div key={idx} className="flex items-center gap-10">
+                      <img
+                        src={tag.svgPath} // e.g. "/icons/react.svg"
+                        alt={tag.name}
+                        className="w-12 h-12"
+                      />
+                    </div>
+                  );
+                })}
+
+                {/* {project.tags.map((tag, index) => (
                   <span
                     key={index}
                     className="px-2 py-0.5 text-xs rounded-full bg-primary-500/20 text-primary-200 border border-primary-500/30"
                   >
                     {tag}
                   </span>
-                ))}
+                ))} */}
               </div>
             </div>
           </button>
