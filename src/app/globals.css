@@ -40,7 +40,45 @@
 }
 
 body {
-  /*background: var(--background);*/
-  /*color: var(--foreground);*/
+  background: var(--foreground);
+  color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .rich-text ul {
+    @apply list-disc list-inside;
+  }
+
+  .rich-text ol {
+    @apply list-decimal list-inside;
+  }
+
+  .rich-text a {
+    @apply text-primary-500 hover:text-primary-600;
+  }
+
+  .rich-text h1 {
+    @apply text-4xl leading-tight font-bold mt-8 mb-6 scroll-mt-[100px];
+  }
+
+  .rich-text h2 {
+    @apply text-3xl leading-tight font-semibold mt-8 mb-5 scroll-mt-[100px];
+  }
+
+  .rich-text h3 {
+    @apply text-2xl leading-snug font-semibold mt-7 mb-4 scroll-mt-[100px];
+  }
+
+  .rich-text h4 {
+    @apply text-xl leading-snug font-semibold mt-6 mb-4 scroll-mt-[100px];
+  }
+
+  .rich-text h5 {
+    @apply text-lg leading-normal font-semibold mt-5 mb-3 scroll-mt-[100px];
+  }
+
+  .rich-text h6 {
+    @apply text-base leading-normal font-semibold mt-4 mb-3 scroll-mt-[100px];
+  }
 }

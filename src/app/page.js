@@ -1,6 +1,6 @@
 import ProjectSection from "./components/ProjectSection";
+import PostsSection from "./components/PostsSections";
 import { client } from "../sanity/lib/client";
-import TestPage from "./components/Test";
 
 const query = `*[_type == "project"]{
   _id, name, githubUrl, image, projectUrl, description, fullDescription, tags[]{svgPath}, techStack
@@ -35,6 +35,7 @@ export default async function Home() {
         </div>
       </div>
       <ProjectSection projects={projects} />
+      <PostsSection />
     </div>
   );
 }
