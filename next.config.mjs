@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  devIndicators: false, // Disable tools and icon for Next.js
   images: {
     domains: ["cdn.sanity.io"], // ✅ allow Sanity image CDN
     remotePatterns: [
