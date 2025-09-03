@@ -1,6 +1,8 @@
 import ProjectSection from "./components/ProjectSection";
-import PostsSection from "./components/PostsSections";
+import PostsSection from "./components/PostsSection";
 import { client } from "../sanity/lib/client";
+import Link from "next/link";
+import { getAuthor } from "@/sanity/lib/getAuthor";
 
 const query = `*[_type == "project"]{
   _id, name, githubUrl, image, projectUrl, description, fullDescription, tags[]{svgPath}, techStack
@@ -9,7 +11,7 @@ const query = `*[_type == "project"]{
 const projects = await client.fetch(query);
 
 export default async function Home() {
-  console.log(projects);
+  const author = await getAuthor("sean-kozen");
   return (
     <div className="container mx-auto p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div className="relative">
@@ -26,9 +28,12 @@ export default async function Home() {
           your ideas to the world.
         </p>
         <div className="flex mt-10 gap-4">
-          <button className="px-8 py-3 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-500">
+          <Link
+            href={`/author/${author.slug}`}
+            className="px-8 py-3 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-500"
+          >
             About Me
-          </button>
+          </Link>
           <button className="px-8 py-3 rounded-lg border border-gray-600 text-gray-300 hover:border-primary-500 font-medium">
             Contact Me
           </button>

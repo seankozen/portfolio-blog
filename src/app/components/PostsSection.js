@@ -42,7 +42,7 @@ const posts = await getPosts();
 
 const PostsSection = async () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8" id="blog">
       <div className="flex gap-12 sm:gap-24">
         <div className="w-72">
           <h2 className="text-4xl font-bold text-light">
@@ -52,7 +52,7 @@ const PostsSection = async () => {
         <div className="flex-1 grid grid-cols-2 gap-12">
           {posts.map((post) => (
             <Link
-              href={`/posts/${post.slug.current}`}
+              href={`/posts/${post.slug}`}
               key={post._id}
               className="group block"
             >
