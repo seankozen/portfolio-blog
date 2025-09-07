@@ -116,3 +116,18 @@ body {
     transparent 60%
   ); */
 }
+
+.default-fade {
+  -webkit-mask: radial-gradient(
+    ellipse 70% 60% at center,
+    transparent 0%,
+    rgba(15 23 42) 0%,
+    transparent 60%
+  );
+  mask: radial-gradient(
+    ellipse 80% 70% at center,
+    transparent 0%,
+    rgba(15 23 42) 0%,
+    transparent 60%
+  );
+}

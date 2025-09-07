@@ -23,10 +23,18 @@ export default function HeroSection({ author }) {
       onMouseLeave={() => setIsHovering(false)}
     >
       <div
+        className="pattern-bg default-fade"
+        style={{
+          opacity: isHovering ? 0 : 0.3,
+          transition: "opacity 0.5s ease-in-out",
+        }}
+      ></div>
+      <div
         className="pattern-bg"
         style={{
-          WebkitMask: `radial-gradient(ellipse 70% 60% at ${mousePosition.x}% ${mousePosition.y}%, rgb(15 23 42) 0%, transparent 60%)`,
-          mask: `radial-gradient(ellipse 70% 60% at ${mousePosition.x}% ${mousePosition.y}%, rgb(15 23 42) 0%, transparent 60%)`,
+          WebkitMask: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgb(15 23 42) 0%, transparent 30%)`,
+          mask: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgb(15 23 42) 0%, transparent 30%)`,
+          opacity: isHovering ? 0.3 : 0,
         }}
       ></div>
       <div className="opacity-10">
