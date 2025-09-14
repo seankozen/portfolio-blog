@@ -70,10 +70,32 @@ function ProjectModal({ project, onClose, onNext, onPrev }) {
             </button>
           </div>
         </div>
+        {/* Project Links */}
+        <div className="flex gap-4 mt-4">
+          {project.projectUrl && (
+            <a
+              href={project.projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors"
+            >
+              View Project
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors"
+            >
+              GitHub
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
 export default ProjectModal;
-<X />;

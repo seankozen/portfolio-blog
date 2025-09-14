@@ -115,6 +115,15 @@ body {
     rgba(15 23 42) 0%,
     transparent 60%
   ); */
+  @media (max-width: 768px) {
+    width: calc(100% + 4rem);
+    height: calc(100% + 4rem);
+    top: -3rem;
+    left: -3rem;
+    right: -3rem;
+    bottom: -3rem;
+    background-size: 30px 30px;
+  }
 }
 
 .default-fade {

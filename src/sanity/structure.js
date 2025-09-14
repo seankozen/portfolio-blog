@@ -39,4 +39,9 @@ export const structure = (S) =>
                 .icon(DocumentTextIcon),
             ])
         ),
+
+      // Bio/About Me section
+      S.listItem()
+        .title("About Me")
+        .child(S.documentTypeList("aboutMe").title("About Me")),
     ]);
