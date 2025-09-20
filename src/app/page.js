@@ -15,7 +15,7 @@ export default async function Home() {
   const author = await getAuthor("sean-kozen");
   return (
     <div className="container mx-auto p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <HeroSection author={author} />
+      <HeroSection />
       <ProjectSection projects={projects} />
       <PostsSection />
     </div>

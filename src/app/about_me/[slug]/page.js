@@ -34,7 +34,7 @@ export default async function AboutMePage({ params }) {
   if (!aboutMe) return <div>About Me not found</div>;
 
   return (
-    <div className="container mx-auto p-20">
+    <div className="container mx-auto px-4 sm:px-8 lg:px-60">
       <h1 className="text-5xl font-bold mb-5 leading-normal text-center">
         About Me
       </h1>

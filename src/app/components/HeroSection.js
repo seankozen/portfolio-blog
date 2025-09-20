@@ -51,7 +51,7 @@ export default function HeroSection({ author }) {
       </p>
       <div className="flex mt-10 gap-4">
         <Link
-          href={`/author/${author.slug}`}
+          href="/about_me/sean-kozen"
           className="px-8 py-3 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-500"
         >
           About Me
