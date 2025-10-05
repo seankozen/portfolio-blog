@@ -29,7 +29,7 @@ export default async function Post({ params }) {
               alt={post.mainImage.alt || post.title}
               width={480} // adjust as needed
               height={270} // keep aspect ratio
-              className="mx-auto w-[50%] h-auto rounded-xl"
+              className="mx-auto w-[90%] sm:w-[70%] md:w-[70%] h-auto rounded-xl"
             />
           </div>
         )}
