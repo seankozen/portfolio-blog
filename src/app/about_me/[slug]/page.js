@@ -35,7 +35,7 @@ export default async function AboutMePage({ params }) {
 
   return (
     <div className="container mx-auto px-4 sm:px-8 lg:px-60">
-      <h1 className="text-5xl font-bold mb-5 leading-normal text-center">
+      <h1 className="text-5xl font-bold mb-5 leading-normal text-center mt-10 sm:mt-5">
         About Me
       </h1>
       {aboutMe.image?.asset?.url && (
