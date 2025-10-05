@@ -14,6 +14,7 @@ import { schema } from "./src/sanity/schemaTypes";
 import { structure } from "./src/sanity/structure";
 
 export default defineConfig({
+  favicon: "/studio/favicon.ico", // <- Studio favicon
   basePath: "/studio",
   projectId,
   dataset,
