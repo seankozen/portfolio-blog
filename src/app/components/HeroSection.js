@@ -56,10 +56,11 @@ export default function HeroSection({ author }) {
         >
           About Me
         </Link>
-        <Link href="/contact">
-          <button className="px-8 py-3 rounded-lg border border-gray-600 text-gray-300 hover:border-primary-500 font-medium">
-            Contact Me
-          </button>
+        <Link
+          href="/contact"
+          className="px-8 py-3 rounded-lg border border-gray-600 text-gray-300 hover:border-primary-500 font-medium"
+        >
+          Contact Me
         </Link>
       </div>
     </div>
