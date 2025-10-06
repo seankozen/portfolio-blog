@@ -57,18 +57,26 @@ function ProjectSection({ projects }) {
               <h3 className="text-lg font-semibold text-white mb-2">
                 {project.name}
               </h3>
-              <div className="flex flex-wrap gap-10 mt-auto items-center">
+              <div className="flex flex-wrap justify-center gap-10 mt-auto items-center">
                 {project.tags?.map((tag, idx) => {
                   if (!tag || !tag.svgPath) return null; // skip null/empty
                   return (
-                    <div key={idx} className="flex items-center gap-10">
+                    <img
+                      key={idx}
+                      src={tag.svgPath}
+                      alt={tag.name}
+                      className="w-12 h-12"
+                    />
+                  );
+                  {
+                    /* <div key={idx} className="flex items-center gap-10">
                       <img
                         src={tag.svgPath} // e.g. "/icons/react.svg"
                         alt={tag.name}
                         className="w-12 h-12"
                       />
-                    </div>
-                  );
+                    </div> */
+                  }
                 })}
 
                 {/* {project.tags.map((tag, index) => (
