@@ -61,10 +61,12 @@ function ProjectSection({ projects }) {
                 {project.tags?.map((tag, idx) => {
                   if (!tag || !tag.svgPath) return null; // skip null/empty
                   return (
-                    <img
+                    <Image
                       key={idx}
                       src={tag.svgPath}
                       alt={tag.name}
+                      width={12}
+                      height={12}
                       className="w-12 h-12"
                     />
                   );
