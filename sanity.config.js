@@ -21,6 +21,8 @@ import {
 import { schema } from "./src/sanity/schemaTypes";
 import { structure } from "./src/sanity/structure";
 
+console.log("Netlify API ID:", netlifyAPI_Id);
+
 export default defineConfig({
   favicon: "/studio/favicon.ico", // <- Studio favicon
   basePath: "/studio",
