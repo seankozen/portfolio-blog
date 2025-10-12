@@ -64,7 +64,7 @@ function ProjectSection({ projects }) {
                     <Image
                       key={idx}
                       src={tag.svgPath}
-                      alt={tag.name}
+                      alt={tag.name || "icon"}
                       width={12}
                       height={12}
                       className="w-12 h-12"
