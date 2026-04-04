@@ -4,9 +4,9 @@ export async function POST(req) {
   try {
     const { name, email, message } = await req.json();
 
-    // Transporter setup (use your email provider settings)
+    // Transporter setup
     const transporter = nodemailer.createTransport({
-      service: "gmail", // or "hotmail", "yahoo", etc.
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
